@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Support Us | Pulau Sebatik Community</title>
+
+<style>
+:root {
+    --primary: #0b5f7d;
+    --secondary: #f2b705;
+    --accent: #1fa67a;
+    --light: #f5f9fc;
+    --dark: #033649;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light);
+    color: #333;
+}
+
+/* =====================
+   HEADER / NAV
+===================== */
+header {
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1541417904950-b855846fe074");
+    background-size: cover;
+    background-position: center;
+    padding: 15px 40px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-title img {
+    width: 50px;
+}
+
+.logo-title h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    background: var(--secondary);
+    color: #000;
+    border-radius: 5px;
+}
+
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    display: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    border-radius: 6px;
+    z-index: 99;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    color: var(--dark);
+}
+
+nav ul li ul li a:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* =====================
+   SUPPORT SECTION
+===================== */
+.support-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+    padding: 40px;
+}
+
+.support-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.support-header h2 {
+    font-size: 32px;
+    color: var(--dark);
+}
+
+.support-header p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* =====================
+   BANK DETAILS
+===================== */
+.bank-box {
+    background: var(--light);
+    border-left: 6px solid var(--primary);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.bank-box img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.bank-box p {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.bank-box strong {
+    color: var(--dark);
+}
+
+/* =====================
+   QR SECTION
+===================== */
+.qr-box {
+    text-align: center;
+    background: var(--light);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.qr-box img {
+    width: 220px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+/* =====================
+   DONATE BUTTON
+===================== */
+.donate-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 40px;
+    background: var(--secondary);
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.donate-btn:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* =====================
+   THANK YOU MODAL
+===================== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 450px;
+    text-align: center;
+    animation: pop .4s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content i {
+    font-size: 55px;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.modal-content p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.close-btn {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.social-icons a:hover {
+    color: #00b4d8;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Pulau Sebatik Logo">
+            <h1>PULAU SEBATIK COMMUNITY</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="info.html">INFO</a></li>
+                <li>
+                    <a href="#">ACTIVITY ▾</a>
+                    <ul>
+                        <li><a href="activity1.html">Fishing</a></li>
+                        <li><a href="activity2.html">Agricultural</a></li>
+                        <li><a href="activity3.html">Tourism</a></li>
+                    </ul>
+                <li><a href="donation.html">SUPPORT US</a></li>
+                <li>
+                    <a href="#">CONTACT US ▾</a>
+                    <ul>
+                        <li><a href="aboutus.html">Our Team</a></li>
+                        <li><a href="feedback&suggestion.html">Feedback & Suggestion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="support-container">
+
+    <div class="support-header">
+        <h2>Support Our Community</h2>
+        <p>
+            Your generous contribution helps us preserve culture, empower local communities,
+            support education initiatives, and promote sustainable development in Pulau Sebatik.
+            Every donation makes a meaningful difference.
+        </p>
+    </div>
+
+    <div class="support-grid">
+
+        <!-- BANK DETAILS -->
+        <div class="bank-box">
+            <img src="images/maybank.png">
+
+            <p><strong>Bank Name:</strong> Maybank MBB</p>
+            <p><strong>Account Name:</strong> Pulau Sebatik Community</p>
+            <p><strong>Account Number:</strong> 1234 5678 9012</p>
+            <p><strong>Reference:</strong> Community Support</p>
+
+            <button class="donate-btn" onclick="openModal()">
+                I Have Donated
+            </button>
+        </div>
+
+        <!-- QR PAYMENT -->
+        <div class="qr-box">
+            <h3>Scan to Donate</h3>
+            <img src="images/qr.jpeg">
+            <p>Use your banking or e-wallet app to scan the QR code.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- THANK YOU MODAL -->
+<div class="modal" id="thankYouModal">
+    <div class="modal-content">
+        <i class="fas fa-heart"></i>
+        <h3>Thank You for Your Support!</h3>
+        <p>
+            We sincerely appreciate your generosity.  
+            Your contribution helps our community grow stronger and create
+            a better future for everyone in Pulau Sebatik.
+        </p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script>
+function openModal() {
+    document.getElementById("thankYouModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("thankYouModal").style.display = "none";
+}
+</script>
+<footer>
+    <div class="footer-contact">
+        <strong>Follow, Like and Share Our Channel ==>></strong>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+    <div>© 2025 Pulau Sebatik Community</div>
+</footer>
+
+</body>
+</html>

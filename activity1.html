@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title> Activity1 | Pulau Sebatik Community</title>
+
+<style>
+:root {
+    --primary: #0b5f7d;
+    --secondary: #f2b705;
+    --accent: #1fa67a;
+    --light: #f5f9fc;
+    --dark: #033649;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light);
+    color: #333;
+}
+
+/* =====================
+   HEADER / NAV
+===================== */
+header {
+    background: 
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1541417904950-b855846fe074");
+    background-size: cover;
+    background-position: center;
+    padding: 15px 40px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-title img {
+    width: 50px;
+}
+
+.logo-title h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* NAVIGATION */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: var(--secondary);
+    color: #000;
+    border-radius: 5px;
+    transform: translateY(-2px);
+}
+
+/* DROPDOWN */
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    display: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    border-radius: 6px;
+    z-index: 99;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    color: var(--dark);
+}
+
+nav ul li ul li a:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* =====================
+   MAIN CONTENT
+===================== */
+main {
+    padding: 40px;
+}
+
+/* VIDEO + INFO */
+.top-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+}
+
+.video-box video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.info-box div {
+    background: white;
+    padding: 25px;
+    border-left: 6px solid var(--primary);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform .3s;
+}
+
+.info-box div:hover {
+    transform: translateY(-5px);
+}
+
+/* =====================
+   GALLERY
+===================== */
+.gallery-title {
+    text-align: center;
+    margin: 60px 0 20px;
+    font-size: 30px;
+    color: var(--dark);
+}
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 25s linear infinite;
+}
+
+.carousel-track img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 12px;
+    transition: transform .3s;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.08);
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.social-icons a:hover {
+    color: #00b4d8;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+    .top-section {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Pulau Sebatik Logo">
+            <h1>PULAU SEBATIK COMMUNITY</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="info.html">INFO</a></li>
+
+                <li>
+                    <a href="#">ACTIVITY ▾</a>
+                    <ul>
+                        <li><a href="activity1.html">Fishing</a></li>
+                        <li><a href="activity2.html">Agricultural</a></li>
+                        <li><a href="activity3.html">Tourism</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="donation.html">SUPPORT US</a></li>
+
+                <li>
+                    <a href="#">CONTACT US ▾</a>
+                    <ul>
+                        <li><a href="aboutus.html">Our Team</a></li>
+                        <li><a href="feedback&suggestion.html">Feedback & Suggestion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="top-section">
+    <div class="video-box">
+        <video autoplay muted loop playsinline>
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="info-box">
+        <div>
+            <h2>Every Cast Becomes an Adventure</h2>
+            <p>Dive into the traditional and modern fishing practices of Pulau Sebatik. Experience life on the water, from casting nets to catching fresh seafood alongside local fishermen.</p>
+        </div>
+
+        <div>
+            <h2>Embrace the Fishing Experience</h2>
+            <p>Learn about sustainable fishing, local marine life, and the island’s rich aquatic ecosystem. This hands-on experience offers both education and adventure, perfect for nature lovers and curious travelers.</p>
+        </div>
+    </div>
+</section>
+
+<h2 class="gallery-title">Photo Gallery</h2>
+
+<section class="carousel">
+    <div class="carousel-track">
+        <img src="images/image8.jpeg">
+        <img src="images/image9.jpg">
+        <img src="images/image10.jpg">
+        <img src="images/image11.jpg">
+        <img src="images/image12.jpg">
+        <img src="images/image13.jpg">
+        <img src="images/image14.jpg">
+        <img src="images/image10.jpg">
+        <img src="images/image11.jpg">
+        <img src="images/image12.jpg">
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <strong>Follow, Like and Share Our Channel ==>></strong>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+    <div>© 2025 Pulau Sebatik Community</div>
+</footer>
+
+</body>
+</html>
